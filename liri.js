@@ -87,7 +87,7 @@ searchMovie = function() {
     var URL =  "http://www.omdbapi.com/?t=" + searchTerm + "&y=&plot=short&apikey=trilogy"
 
     if (searchTerm === "" ){
-        searchTerm = "Mr. Nobody";
+        searchTerm = "How to Train Your Dragon";
     }
 
     request(URL, function(error, response, body){
