@@ -14,11 +14,11 @@ var twitterClient = new twitter({
     access_token_key: keys.twitter.access_token_key,
     access_token_secret: keys.twitter.access_token_secret
 });
-var spotifyClient = new spotify(
-    {id: keys.spotify.id,
-    secret: keys.spotify.secret}
+var spotifyClient = new spotify({
+    id: keys.spotify.id,
+    secret: keys.spotify.secret
     // keys.spotify
-);
+});
 
 var divider = "\n\n=====================================\n " 
 
