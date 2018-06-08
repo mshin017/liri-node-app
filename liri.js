@@ -14,10 +14,11 @@ var twitterClient = new twitter({
     access_token_key: keys.twitter.access_token_key,
     access_token_secret: keys.twitter.access_token_secret
 });
-// var spotifyClient = new spotify({
-//     clientId: keys.spotify.id,
-//     clientSecret: keys.spotify.secret
-// });
+var spotifyClient = new spotify(
+    // clientId: keys.spotify.id,
+    // clientSecret: keys.spotify.secret
+    keys.spotify
+);
 
 
 
@@ -55,7 +56,7 @@ spotifySong = function() {
     if (searchTerm === "") {
         searchTerm = "Ultralight Beam"
     }
-    spotify.search({ type: 'track', query: searchTerm, limit: 1 }, function(err, data) {
+    spotifyClient.search({ type: 'track', query: searchTerm, limit: 1 }, function(err, data) {
         if (err) {
             return console.log('Error occurred: ' + err);
         }
@@ -130,10 +131,10 @@ switch (operation) {
         displayTweets();
         break
 
-    // case "spotify-this-song":
-    //     console.log("Searching...beep bop beep")
-    //     spotify.spotifySong();
-    //     break
+    case "spotify-this-song":
+        console.log("Searching...beep bop beep")
+        spotifySong();
+        break
 
     case "movie-this":
         console.log("Searching...beep bop beep")
