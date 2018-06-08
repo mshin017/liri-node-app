@@ -119,7 +119,7 @@ randomSearch = function() {
 
         operation = randomArray[0]
         searchTerm = randomArray[1]
-        spotifySearch()
+        spotifySong()
 
     })
 }
