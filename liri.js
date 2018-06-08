@@ -15,11 +15,12 @@ var twitterClient = new twitter({
     access_token_secret: keys.twitter.access_token_secret
 });
 var spotifyClient = new spotify(
-    // clientId: keys.spotify.id,
-    // clientSecret: keys.spotify.secret
-    keys.spotify
+    {id: keys.spotify.id,
+    secret: keys.spotify.secret}
+    // keys.spotify
 );
 
+var divider = "\n\n=====================================\n " 
 
 
 displayTweets = function() {
@@ -33,9 +34,9 @@ displayTweets = function() {
         if (!error) {
             for (var i = 1; i < tweets.length; i++) {
                 var myTweets = (
-                        "\n=====================================\n " +
                         "\nTweeted on: " + tweets[i].created_at +
-                        "\nTweet: " + tweets[i].full_text
+                        "\nTweet: " + tweets[i].full_text + 
+                        divider 
                     )
                     console.log(myTweets);
                 }
@@ -127,22 +128,22 @@ randomSearch = function() {
 switch (operation) {
 
     case "my-tweets":
-        console.log("Searching...beep bop beep")
+        console.log("\nSearching...beep bop beep" + divider )
         displayTweets();
         break
 
     case "spotify-this-song":
-        console.log("Searching...beep bop beep")
+        console.log("\nSearching...beep bop beep"+ divider )
         spotifySong();
         break
 
     case "movie-this":
-        console.log("Searching...beep bop beep")
+        console.log("\nSearching...beep bop beep"+ divider )
         searchMovie();
         break
 
     case "do-what-it-says":
-        console.log("Searching...beep bop beep")
+        console.log("\nSearching...beep bop beep"+ divider )
         randomSearch();
         break
 }
