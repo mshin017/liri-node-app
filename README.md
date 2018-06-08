@@ -6,6 +6,6 @@ For this app, I am pulling data from Twitter, Spotify and OMDB.
 
 There are 4 commands you can ask LIRI:
 1. "my-tweets" 
-2. "spotify-this-song + <song>"
-3. "movie-this + <movie>"
+2. "spotify-this-song + song"
+3. "movie-this + movie"
 4. "do-what-it-says"
